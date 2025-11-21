@@ -97,7 +97,11 @@
       font-family: var(--font-heading);
     }
 
-    nav a { color: #1b00ff; }
+    nav a {
+      color: #1b00ff;
+      font-family: inherit; /* FIX APPLIED HERE */
+    }
+
     nav a:hover,
     nav .active { color: #fffb00; }
 
@@ -202,6 +206,7 @@
       .header-inner { flex-direction: column; align-items: flex-start; }
       nav ul { font-size: 1.05rem; }
       footer .footer-inner { grid-template-columns: minmax(0, 1fr); }
+
       .cookie-banner {
         flex-direction: column;
         align-items: flex-start;
@@ -235,7 +240,6 @@
   <div class="wrapper">
     <main>
 
-      <!-- NO TITLE + NO EMPTY ROW -->
       <div class="cv-text">
 encoded invitation: 
 -voicemail (2022) 06:53 
@@ -277,7 +281,7 @@ Other works:
         </div>
 
         <div>
-          <div class="footer-title">Legal</div>
+          <div class="footer-title"">Legal</div>
           <ul class="footer-list">
             <li><a href="terms-of-use.html">Terms of use</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
@@ -307,7 +311,6 @@ Other works:
   </div>
 
   <script>
-    // Scroll to top
     const scrollBtn = document.getElementById('scrollToTop');
     window.addEventListener('scroll', () => {
       scrollBtn.classList.toggle('show', window.scrollY > 400);
@@ -316,7 +319,6 @@ Other works:
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Cookie banner
     (function () {
       const banner = document.getElementById('cookieBanner');
       const button = document.getElementById('cookieAccept');
