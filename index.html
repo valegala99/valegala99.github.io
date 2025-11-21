@@ -20,6 +20,14 @@
       --link: #1b00ff;
       --link-hover: #fffb00;
       --max-width: 1100px;
+
+      --font-body: "VT323", monospace;
+      --font-heading: "Turret Road", sans-serif;
+      --base-font-size: 20px;
+      --menu-font-size: 1.25rem;
+      --heading1: 2.6rem;
+      --heading2: 2.2rem;
+      --heading3: 1.7rem;
     }
 
     * {
@@ -31,15 +39,15 @@
     html, body {
       background: var(--bg);
       color: var(--text);
-      font-family: "VT323", monospace;
-      font-size: 19px;
-      line-height: 1.5;
+      font-family: var(--font-body);
+      font-size: var(--base-font-size);
+      line-height: 1.55;
     }
 
     a {
       color: var(--link);
       text-decoration: none;
-      font-family: "VT323", monospace;
+      font-family: var(--font-body);
     }
 
     a:hover {
@@ -79,11 +87,11 @@
     }
 
     .logo {
-      font-size: 2.1rem;
+      font-size: 2.3rem;
       font-weight: 700;
       color: var(--accent);
       white-space: nowrap;
-      font-family: "Turret Road", sans-serif;
+      font-family: var(--font-heading);
     }
 
     nav ul {
@@ -91,17 +99,41 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      font-size: 1.05rem;
+      font-size: var(--menu-font-size);
       text-transform: uppercase;
       font-weight: 700;
-      font-family: "Turret Road", sans-serif;
+      font-family: var(--font-heading);
     }
 
-    nav a { color: #1b00ff; }
-    nav a:hover,
-    nav .active { color: #fffb00; }
+    nav a {
+      color: #1b00ff;
+      font-size: var(--menu-font-size);
+    }
 
-    main { padding-top: 1.5rem; }
+    nav a:hover,
+    nav .active {
+      color: #fffb00;
+    }
+
+    main {
+      padding-top: 1.5rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+    }
+
+    h1 { font-size: var(--heading1); }
+    h2 { font-size: var(--heading2); }
+    h3 { font-size: var(--heading3); }
+    h4, h5, h6 { font-size: 1.4rem; }
+
+    .page-title {
+      font-size: var(--heading2);
+      text-transform: lowercase;
+      margin-bottom: 1rem;
+    }
 
     .grid {
       display: grid;
@@ -120,12 +152,12 @@
       padding: 0.55rem 1.5rem;
       border-radius: 999px;
       border: 1px solid #fff;
-      font-size: 1rem;
+      font-size: 1.15rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       background: transparent;
       color: #fff;
-      font-family: "Turret Road", sans-serif;
+      font-family: var(--font-heading);
     }
 
     .btn:hover {
@@ -133,19 +165,9 @@
       color: #000;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-family: "Turret Road", sans-serif;
-      font-weight: 700;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      text-transform: lowercase;
-    }
-
     .text-big {
-      font-size: 1.1rem;
+      font-size: calc(var(--base-font-size) * 1.1);
+      line-height: 1.6;
     }
 
     footer {
@@ -166,7 +188,7 @@
     .footer-title {
       font-weight: 700;
       margin-bottom: 0.5rem;
-      font-family: "Turret Road", sans-serif;
+      font-family: var(--font-heading);
       font-size: 1.1rem;
     }
 
@@ -188,7 +210,7 @@
 
     .social a {
       font-weight: 600;
-      font-family: "Turret Road", sans-serif;
+      font-family: var(--font-heading);
       font-size: 0.95rem;
     }
 
@@ -207,7 +229,7 @@
       justify-content: center;
       cursor: pointer;
       font-size: 1.1rem;
-      font-family: "Turret Road", sans-serif;
+      font-family: var(--font-heading);
     }
 
     #scrollToTop.show {
@@ -229,7 +251,7 @@
       gap: 0.75rem;
       font-size: 0.95rem;
       z-index: 50;
-      font-family: "VT323", monospace;
+      font-family: var(--font-body);
     }
     .cookie-banner button {
       border-radius: 999px;
@@ -239,7 +261,7 @@
       padding: 0.4rem 1.2rem;
       font-size: 0.95rem;
       cursor: pointer;
-      font-family: "Turret Road", sans-serif;
+      font-family: var(--font-heading);
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
@@ -251,7 +273,7 @@
       }
 
       nav ul {
-        font-size: 0.95rem;
+        font-size: 1.05rem;
       }
 
       .grid {
@@ -306,7 +328,7 @@
         </div>
 
         <div>
-          <h2 id="encoded-invitation-title">encoded invitation</h2>
+          <h2 class="page-title" id="encoded-invitation-title">encoded invitation</h2>
 
           <p class="text-big">
             Recorded, composed, mixed and mastered by Valerio Galadini between 2022 and 2024,
