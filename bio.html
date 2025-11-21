@@ -91,11 +91,6 @@
       margin-top: 0.5rem;
     }
 
-    h1 {
-      font-size: 2.1rem;
-      margin-bottom: 0.75rem;
-    }
-
     .text-big { font-size: 1.05rem; }
 
     footer {
@@ -214,43 +209,40 @@
 
   <div class="wrapper">
     <main>
-      <section class="grid" aria-labelledby="bio-title">
+      <section class="grid">
         <div class="bio-photo">
-          <!-- picture tries webp/jpg first if you add them, falls back to PNG -->
-          <picture>
-            <source srcset="data/files/fotofinale.webp" type="image/webp">
-            <source srcset="data/files/fotofinale.jpg" type="image/jpeg">
-            <img
-              src="data/files/fotofinale.png"
-              alt="Portrait of Valerio Galadini"
-              width="1200"
-              height="801"
-              loading="lazy">
-          </picture>
+          <!-- Image: fotofinale.png in data/files/ -->
+          <img
+            src="data/files/fotofinale.png"
+            alt=""
+            width="1200"
+            height="801"
+            loading="lazy">
         </div>
 
         <div>
-          <h1 id="bio-title">Valerio Galadini</h1>
-
           <p class="text-big">
             Valerio Galadini is a composer and sound artist specializing in experimental and
             electroacoustic music, with an approach that bridges modern technologies and an aesthetic
             deeply influenced by contemporary media. His work is known for its ability to evoke places
             and events through sound, creating immersive and visually evocative listening experiences.
           </p>
+
           <p class="text-big" style="margin-top:0.75rem">
             Drawing inspiration from genres such as musique concrète, glitch, soundscape composition,
-            and ambient music, his compositional process incorporates ambient recordings, found
-            objects, voices, and electronic textures. Galadini’s works are marked by meticulous
-            attention to detail, often achieved through a collage-like layering of sounds that reflect
-            a hyperrealistic interpretation of imagined or real environments.
+            and ambient music, his compositional process incorporates ambient recordings, found objects,
+            voices, and electronic textures. Galadini’s works are marked by meticulous attention to detail,
+            often achieved through a collage-like layering of sounds that reflect a hyperrealistic
+            interpretation of imagined or real environments.
           </p>
+
           <p class="text-big" style="margin-top:0.75rem">
             His music also explores the relationship between humans and technology, reflecting on how
             modern technological elements can coexist with emotional and natural components. This is
             expressed through electronic sounds that often convey intimacy, harmony, and an intuitive
             connection between people and the devices that surround them.
           </p>
+
           <p class="text-big" style="margin-top:0.75rem">
             By integrating such elements into his compositions, Galadini's music addresses the
             intersection of the natural and the artificial, inviting deeper reflection on their
@@ -281,7 +273,6 @@
           <ul class="footer-list">
             <li><a href="terms-of-use.html">Terms of use</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
-
           </ul>
 
           <div class="footer-title" style="margin-top:1.25rem;">Social</div>
