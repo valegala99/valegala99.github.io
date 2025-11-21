@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bio — Valerio Galadini</title>
-  <meta name="description" content="Biografia di Valerio Galadini, compositore e sound artist.">
+  <meta name="description" content="Bio — Valerio Galadini">
   <link rel="shortcut icon" href="kopage_files/editor_images/favicon.png">
 
-  <!-- Shared fonts for ALL pages -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@400;700&family=VT323&display=swap" rel="stylesheet">
@@ -23,8 +23,10 @@
 
       --font-body: "VT323", monospace;
       --font-heading: "Turret Road", sans-serif;
+
       --base-font-size: 20px;
       --menu-font-size: 1.25rem;
+
       --heading1: 2.6rem;
       --heading2: 2.2rem;
       --heading3: 1.7rem;
@@ -118,20 +120,23 @@
     .page-title {
       font-size: var(--heading2);
       text-transform: lowercase;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
-    .grid {
+    .bio-layout {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
       gap: 2rem;
       align-items: flex-start;
     }
 
-    .bio-photo { margin-top: 0.5rem; }
+    .bio-image {
+      max-width: 100%;
+      border-radius: 0;
+    }
 
-    .text-big {
-      font-size: calc(var(--base-font-size) * 1.1);
+    .bio-text {
+      font-size: calc(var(--base-font-size) * 1.05);
       line-height: 1.6;
     }
 
@@ -209,6 +214,7 @@
       z-index: 50;
       font-family: var(--font-body);
     }
+
     .cookie-banner button {
       border-radius: 999px;
       border: 1px solid #fff;
@@ -225,8 +231,13 @@
     @media (max-width: 768px) {
       .header-inner { flex-direction: column; align-items: flex-start; }
       nav ul { font-size: 1.05rem; }
-      .grid { grid-template-columns: minmax(0, 1fr); }
+
+      .bio-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
       footer .footer-inner { grid-template-columns: minmax(0, 1fr); }
+
       .cookie-banner {
         flex-direction: column;
         align-items: flex-start;
@@ -235,6 +246,8 @@
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <div class="header-inner">
       <a href="index.html" class="logo">Valerio Galadini</a>
@@ -253,59 +266,42 @@
     </div>
   </header>
 
+  <!-- Main -->
   <div class="wrapper">
     <main>
-      <section class="grid">
-        <div class="bio-photo">
+      <h2 class="page-title">bio</h2>
+
+      <section class="bio-layout">
+        <div>
           <img
-            src="data/files/fotofinale.png"
-            alt=""
-            width="1200"
-            height="801"
+            src="fotofinale.png"
+            alt="Portrait of Valerio Galadini"
+            class="bio-image"
+            width="800"
+            height="800"
             loading="lazy">
         </div>
 
-        <div>
-          <h2 class="page-title">bio</h2>
-
-          <p class="text-big">
-            Valerio Galadini is a composer and sound artist specializing in experimental and
-            electroacoustic music, with an approach that bridges modern technologies and an aesthetic
-            deeply influenced by contemporary media. His work is known for its ability to evoke places
-            and events through sound, creating immersive and visually evocative listening experiences.
+        <div class="bio-text">
+          <!-- YOUR BIO TEXT EXACTLY AS GIVEN -->
+          <p>
+            Valerio Galadini is a composer and sound artist specializing in experimental and electroacoustic music, with an approach that bridges modern technologies and an aesthetic deeply influenced by contemporary media. His work is known for its ability to evoke places and events through sound, creating immersive and visually evocative listening experiences. Drawing inspiration from genres such as musique concrète, glitch, soundscape composition, and ambient music, his compositional process incorporates ambient recordings, found objects, voices, and electronic textures. Galadini’s works are marked by meticulous attention to detail, often achieved through a collage-like layering of sounds that reflect a hyperrealistic interpretation of imagined or real environments.
           </p>
-
-          <p class="text-big" style="margin-top:0.75rem">
-            Drawing inspiration from genres such as musique concrète, glitch, soundscape composition,
-            and ambient music, his compositional process incorporates ambient recordings, found objects,
-            voices, and electronic textures. Galadini’s works are marked by meticulous attention to detail,
-            often achieved through a collage-like layering of sounds that reflect a hyperrealistic
-            interpretation of imagined or real environments.
-          </p>
-
-          <p class="text-big" style="margin-top:0.75rem">
-            His music also explores the relationship between humans and technology, reflecting on how
-            modern technological elements can coexist with emotional and natural components. This is
-            expressed through electronic sounds that often convey intimacy, harmony, and an intuitive
-            connection between people and the devices that surround them.
-          </p>
-
-          <p class="text-big" style="margin-top:0.75rem">
-            By integrating such elements into his compositions, Galadini's music addresses the
-            intersection of the natural and the artificial, inviting deeper reflection on their
-            coexistence and the ways they shape our perception of the modern world.
+          <p>
+            His music also explores the relationship between humans and technology, reflecting on how modern technological elements can coexist with emotional and natural components. This is expressed through electronic sounds that often convey intimacy, harmony, and an intuitive connection between people and the devices that surround them. By integrating such elements into his compositions, Galadini's music addresses the intersection of the natural and the artificial, inviting deeper reflection on their coexistence and the ways they shape our perception of the modern world.
           </p>
         </div>
       </section>
     </main>
 
+    <!-- Footer -->
     <footer>
       <div class="footer-inner">
         <div>
           <div class="footer-title">Main menu</div>
           <ul class="footer-list">
             <li><a href="index.html">Discography</a></li>
-            <li><a href="sonadec-1.html">Sonadec</sli>
+            <li><a href="sonadec-1.html">Sonadec</a></li>
             <li><a href="bio.html">Bio</a></li>
             <li><a href="cv.html">CV</a></li>
             <li><a href="collaborations.html">Collaborations</a></li>
@@ -314,6 +310,7 @@
             <li><a href="contacts.html">Contacts</a></li>
           </ul>
         </div>
+
         <div>
           <div class="footer-title">Legal</div>
           <ul class="footer-list">
@@ -323,17 +320,19 @@
 
           <div class="footer-title" style="margin-top:1.25rem;">Social</div>
           <div class="social">
-            <a href="https://www.facebook.com/Facebook" target="_blank" rel="noopener">Facebook</a>
-            <a href="https://www.youtube.com/YouTube" target="_blank" rel="noopener">YouTube</a>
-            <a href="https://instagram.com/Instagram" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/Facebook" target="_blank">Facebook</a>
+            <a href="https://www.youtube.com/YouTube" target="_blank">YouTube</a>
+            <a href="https://instagram.com/Instagram" target="_blank">Instagram</a>
           </div>
         </div>
       </div>
     </footer>
   </div>
 
+  <!-- Scroll to top -->
   <button id="scrollToTop" aria-label="Torna all'inizio">↑</button>
 
+  <!-- Cookie banner -->
   <div class="cookie-banner" id="cookieBanner">
     <span>
       Questo sito web può utilizzare cookie tecnici necessari al funzionamento.
@@ -343,26 +342,23 @@
   </div>
 
   <script>
+    // Scroll to top
     const scrollBtn = document.getElementById('scrollToTop');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
-        scrollBtn.classList.add('show');
-      } else {
-        scrollBtn.classList.remove('show');
-      }
+      scrollBtn.classList.toggle('show', window.scrollY > 400);
     });
     scrollBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+    // Cookie banner
     (function () {
       const banner = document.getElementById('cookieBanner');
       const button = document.getElementById('cookieAccept');
-      if (!banner || !button) return;
       const cookieName = 'cookieConsent';
       const hasConsent = document.cookie.split(';').some(c => c.trim().startsWith(cookieName + '=1'));
       if (!hasConsent) banner.style.display = 'flex';
-      button.addEventListener('click', function () {
+      button.addEventListener('click', () => {
         const d = new Date();
         d.setTime(d.getTime() + 365*24*60*60*1000);
         document.cookie = cookieName + '=1; expires=' + d.toUTCString() + '; path=/';
@@ -370,5 +366,6 @@
       });
     })();
   </script>
+
 </body>
 </html>
