@@ -7,7 +7,7 @@
   <meta name="description" content="Biografia di Valerio Galadini, compositore e sound artist.">
   <link rel="shortcut icon" href="kopage_files/editor_images/favicon.png">
 
-  <!-- Same fonts as homepage -->
+  <!-- Shared fonts for ALL pages -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@400;700&family=VT323&display=swap" rel="stylesheet">
@@ -20,23 +20,32 @@
       --link: #1b00ff;
       --link-hover: #fffb00;
       --max-width: 1100px;
+
+      --font-body: "VT323", monospace;
+      --font-heading: "Turret Road", sans-serif;
+      --base-font-size: 20px;
+      --menu-font-size: 1.25rem;
+      --heading1: 2.6rem;
+      --heading2: 2.2rem;
+      --heading3: 1.7rem;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
+    html, body {
       background: var(--bg);
       color: var(--text);
-      font-family: "VT323", monospace;
-      font-size: 19px;
-      line-height: 1.5;
+      font-family: var(--font-body);
+      font-size: var(--base-font-size);
+      line-height: 1.55;
     }
 
-    a { 
-      color: var(--link); 
-      text-decoration: none; 
-      font-family: "VT323", monospace;
+    a {
+      color: var(--link);
+      text-decoration: none;
+      font-family: var(--font-body);
     }
+
     a:hover { color: var(--link-hover); }
 
     img { max-width: 100%; height: auto; display: block; }
@@ -68,11 +77,11 @@
     }
 
     .logo {
-      font-size: 2.1rem;
+      font-size: 2.3rem;
       font-weight: 700;
       color: var(--accent);
       white-space: nowrap;
-      font-family: "Turret Road", sans-serif;
+      font-family: var(--font-heading);
     }
 
     nav ul {
@@ -80,17 +89,37 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      font-size: 1.05rem;
+      font-size: var(--menu-font-size);
       text-transform: uppercase;
       font-weight: 700;
-      font-family: "Turret Road", sans-serif;
+      font-family: var(--font-heading);
     }
 
-    nav a { color: #1b00ff; }
+    nav a {
+      color: #1b00ff;
+      font-size: var(--menu-font-size);
+    }
+
     nav a:hover,
     nav .active { color: #fffb00; }
 
     main { padding-top: 1.5rem; }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+    }
+
+    h1 { font-size: var(--heading1); }
+    h2 { font-size: var(--heading2); }
+    h3 { font-size: var(--heading3); }
+    h4, h5, h6 { font-size: 1.4rem; }
+
+    .page-title {
+      font-size: var(--heading2);
+      text-transform: lowercase;
+      margin-bottom: 1rem;
+    }
 
     .grid {
       display: grid;
@@ -99,16 +128,12 @@
       align-items: flex-start;
     }
 
-    .bio-photo {
-      margin-top: 0.5rem;
-    }
+    .bio-photo { margin-top: 0.5rem; }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-family: "Turret Road", sans-serif;
-      font-weight: 700;
+    .text-big {
+      font-size: calc(var(--base-font-size) * 1.1);
+      line-height: 1.6;
     }
-
-    .text-big { font-size: 1.1rem; }
 
     footer {
       border-top: 1px solid #222;
@@ -128,7 +153,7 @@
     .footer-title {
       font-weight: 700;
       margin-bottom: 0.5rem;
-      font-family: "Turret Road", sans-serif;
+      font-family: var(--font-heading);
       font-size: 1.1rem;
     }
 
@@ -144,7 +169,7 @@
 
     .social a {
       font-weight: 600;
-      font-family: "Turret Road", sans-serif;
+      font-family: var(--font-heading);
       font-size: 0.95rem;
     }
 
@@ -163,12 +188,11 @@
       justify-content: center;
       cursor: pointer;
       font-size: 1.1rem;
-      font-family: "Turret Road", sans-serif;
+      font-family: var(--font-heading);
     }
 
     #scrollToTop.show { display: flex; }
 
-    /* Cookie banner */
     .cookie-banner {
       position: fixed;
       bottom: 0;
@@ -183,7 +207,7 @@
       gap: 0.75rem;
       font-size: 0.95rem;
       z-index: 50;
-      font-family: "VT323", monospace;
+      font-family: var(--font-body);
     }
     .cookie-banner button {
       border-radius: 999px;
@@ -193,23 +217,16 @@
       padding: 0.4rem 1.2rem;
       font-size: 0.95rem;
       cursor: pointer;
-      font-family: "Turret Road", sans-serif;
+      font-family: var(--font-heading);
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
 
     @media (max-width: 768px) {
-      .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav ul { font-size: 0.95rem; }
-
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      nav ul { font-size: 1.05rem; }
       .grid { grid-template-columns: minmax(0, 1fr); }
-
       footer .footer-inner { grid-template-columns: minmax(0, 1fr); }
-
       .cookie-banner {
         flex-direction: column;
         align-items: flex-start;
@@ -221,7 +238,6 @@
   <header>
     <div class="header-inner">
       <a href="index.html" class="logo">Valerio Galadini</a>
-
       <nav aria-label="Main menu">
         <ul>
           <li><a href="index.html">Discography</a></li>
@@ -250,6 +266,8 @@
         </div>
 
         <div>
+          <h2 class="page-title">bio</h2>
+
           <p class="text-big">
             Valerio Galadini is a composer and sound artist specializing in experimental and
             electroacoustic music, with an approach that bridges modern technologies and an aesthetic
@@ -287,7 +305,7 @@
           <div class="footer-title">Main menu</div>
           <ul class="footer-list">
             <li><a href="index.html">Discography</a></li>
-            <li><a href="sonadec-1.html">Sonadec</a></li>
+            <li><a href="sonadec-1.html">Sonadec</sli>
             <li><a href="bio.html">Bio</a></li>
             <li><a href="cv.html">CV</a></li>
             <li><a href="collaborations.html">Collaborations</a></li>
@@ -296,7 +314,6 @@
             <li><a href="contacts.html">Contacts</a></li>
           </ul>
         </div>
-
         <div>
           <div class="footer-title">Legal</div>
           <ul class="footer-list">
@@ -317,7 +334,6 @@
 
   <button id="scrollToTop" aria-label="Torna all'inizio">↑</button>
 
-  <!-- Cookie banner -->
   <div class="cookie-banner" id="cookieBanner">
     <span>
       Questo sito web può utilizzare cookie tecnici necessari al funzionamento.
@@ -327,7 +343,6 @@
   </div>
 
   <script>
-    // Scroll to top button
     const scrollBtn = document.getElementById('scrollToTop');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 400) {
@@ -340,19 +355,13 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Simple cookie consent
     (function () {
       const banner = document.getElementById('cookieBanner');
       const button = document.getElementById('cookieAccept');
       if (!banner || !button) return;
-
       const cookieName = 'cookieConsent';
       const hasConsent = document.cookie.split(';').some(c => c.trim().startsWith(cookieName + '=1'));
-
-      if (!hasConsent) {
-        banner.style.display = 'flex';
-      }
-
+      if (!hasConsent) banner.style.display = 'flex';
       button.addEventListener('click', function () {
         const d = new Date();
         d.setTime(d.getTime() + 365*24*60*60*1000);
