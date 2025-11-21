@@ -42,10 +42,11 @@
       line-height: 1.55;
     }
 
+    /* Links: inherit font from parent, so nav/footer can use Turret Road */
     a {
       color: var(--link);
       text-decoration: none;
-      font-family: var(--font-body);
+      font-family: inherit;
     }
 
     a:hover { color: var(--link-hover); }
@@ -86,6 +87,7 @@
       font-family: var(--font-heading);
     }
 
+    /* MAIN MENU – always Turret Road like in preview */
     nav ul {
       list-style: none;
       display: flex;
@@ -100,6 +102,7 @@
     nav a {
       color: #1b00ff;
       font-size: var(--menu-font-size);
+      font-family: inherit; /* inherits Turret Road from nav ul */
     }
 
     nav a:hover,
@@ -183,6 +186,13 @@
     .footer-list { list-style: none; padding: 0; }
     .footer-list li + li { margin-top: 0.25rem; }
 
+    /* Footer menu links also Turret Road */
+    .footer-list a {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
     .social {
       display: flex;
       gap: 0.75rem;
@@ -194,6 +204,7 @@
       font-weight: 600;
       font-family: var(--font-heading);
       font-size: 0.95rem;
+      text-transform: uppercase;
     }
 
     #scrollToTop {
@@ -290,7 +301,6 @@
         <div>
           <h2 class="page-title">encoded invitation</h2>
 
-          <!-- 🔥 YOUR EXACT ORIGINAL TEXT BELOW (NOT MODIFIED) -->
           <p class="text-big">
             Recorded, composed, mixed and mastered by Valerio Galadini between 2022 and 2024,
             <i>encoded invitation</i> is meant to be an invitation to interface with a virtual city that
