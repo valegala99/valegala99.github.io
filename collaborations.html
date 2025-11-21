@@ -24,11 +24,12 @@
       --font-heading: "Turret Road", sans-serif;
       --base-font-size: 20px;
       --menu-font-size: 1.25rem;
+      --heading1: 2.6rem;
       --heading2: 2.2rem;
+      --heading3: 1.7rem;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html, body {
       background: var(--bg);
       color: var(--text);
@@ -85,18 +86,15 @@
       font-family: var(--font-heading);
     }
 
-    nav a { color: #1b00ff; }
-    nav a:hover, nav .active { color: #fffb00; }
+    nav a {
+      color: #1b00ff;
+      font-size: var(--menu-font-size);
+    }
+
+    nav a:hover,
+    nav .active { color: #fffb00; }
 
     main { padding-top: 1.5rem; }
-
-    h2 {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: var(--heading2);
-      text-transform: lowercase;
-      margin-bottom: 1rem;
-    }
 
     footer {
       border-top: 1px solid #222;
@@ -172,7 +170,6 @@
       z-index: 50;
       font-family: var(--font-body);
     }
-
     .cookie-banner button {
       border-radius: 999px;
       border: 1px solid #fff;
@@ -185,111 +182,104 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
-
-    @media (max-width: 768px) {
-      .header-inner { flex-direction: column; align-items: flex-start; }
-      nav ul { font-size: 1.05rem; }
-      footer .footer-inner { grid-template-columns: minmax(0, 1fr); }
-      .cookie-banner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="header-inner">
-      <a href="index.html" class="logo">Valerio Galadini</a>
-      <nav aria-label="Main menu">
-        <ul>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">Valerio Galadini</a>
+    <nav aria-label="Main menu">
+      <ul>
+        <li><a href="index.html">Discography</a></li>
+        <li><a href="sonadec-1.html">Sonadec</a></li>
+        <li><a href="bio.html">Bio</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="collaborations.html" class="active">Collaborations</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="press-kit.html">Press&nbsp;Kit</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="wrapper">
+  <main>
+
+    <!-- NO TITLE + EMPTY CONTENT -->
+    <div class="text-big"></div>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-title">Main menu</div>
+        <ul class="footer-list">
           <li><a href="index.html">Discography</a></li>
           <li><a href="sonadec-1.html">Sonadec</a></li>
           <li><a href="bio.html">Bio</a></li>
           <li><a href="cv.html">CV</a></li>
-          <li><a href="collaborations.html" class="active">Collaborations</a></li>
+          <li><a href="collaborations.html">Collaborations</a></li>
           <li><a href="reviews.html">Reviews</a></li>
-          <li><a href="press-kit.html">Press&nbsp;Kit</a></li>
+          <li><a href="press-kit.html">Press Kit</a></li>
           <li><a href="contacts.html">Contacts</a></li>
         </ul>
-      </nav>
-    </div>
-  </header>
+      </div>
 
-  <div class="wrapper">
-    <main>
-      <h2 class="page-title">collaborations</h2>
+      <div>
+        <div class="footer-title">Legal</div>
+        <ul class="footer-list">
+          <li><a href="terms-of-use.html">Terms of use</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
 
-      <!-- EMPTY CONTENT -->
-      <div></div>
-    </main>
-
-    <footer>
-      <div class="footer-inner">
-        <div>
-          <div class="footer-title">Main menu</div>
-          <ul class="footer-list">
-            <li><a href="index.html">Discography</a></li>
-            <li><a href="sonadec-1.html">Sonadec</a></li>
-            <li><a href="bio.html">Bio</a></li>
-            <li><a href="cv.html">CV</a></li>
-            <li><a href="collaborations.html">Collaborations</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-            <li><a href="press-kit.html">Press Kit</a></li>
-            <li><a href="contacts.html">Contacts</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="footer-title">Legal</div>
-          <ul class="footer-list">
-            <li><a href="terms-of-use.html">Terms of use</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-          </ul>
-
-          <div class="footer-title" style="margin-top:1.25rem;">Social</div>
-          <div class="social">
-            <a href="https://www.facebook.com/Facebook" target="_blank">Facebook</a>
-            <a href="https://www.youtube.com/YouTube" target="_blank">YouTube</a>
-            <a href="https://instagram.com/Instagram" target="_blank">Instagram</a>
-          </div>
+        <div class="footer-title" style="margin-top:1.25rem;">Social</div>
+        <div class="social">
+          <a href="https://www.facebook.com/Facebook" target="_blank">Facebook</a>
+          <a href="https://www.youtube.com/YouTube" target="_blank">YouTube</a>
+          <a href="https://instagram.com/Instagram" target="_blank">Instagram</a>
         </div>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
+</div>
 
-  <button id="scrollToTop" aria-label="Torna all'inizio">↑</button>
+<button id="scrollToTop" aria-label="Torna all'inizio">↑</button>
 
-  <div class="cookie-banner" id="cookieBanner">
-    <span>
-      Questo sito web può utilizzare cookie tecnici necessari al funzionamento.
-      <a href="privacy-policy.html">Ulteriori informazioni</a>
-    </span>
-    <button type="button" id="cookieAccept">Accetto</button>
-  </div>
+<div class="cookie-banner" id="cookieBanner">
+  <span>
+    Questo sito web può utilizzare cookie tecnici necessari al funzionamento.
+    <a href="privacy-policy.html">Ulteriori informazioni</a>
+  </span>
+  <button type="button" id="cookieAccept">Accetto</button>
+</div>
 
-  <script>
-    const scrollBtn = document.getElementById('scrollToTop');
-    window.addEventListener('scroll', () => {
-      scrollBtn.classList.toggle('show', window.scrollY > 400);
+<script>
+  const scrollBtn = document.getElementById('scrollToTop');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('show', window.scrollY > 400);
+  });
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  (function () {
+    const banner = document.getElementById('cookieBanner');
+    const button = document.getElementById('cookieAccept');
+    const cookieName = 'cookieConsent';
+    const hasConsent = document.cookie.split(';').some(c => c.trim().startsWith(cookieName + '=1'));
+    if (!hasConsent) banner.style.display = 'flex';
+    button.addEventListener('click', () => {
+      const d = new Date();
+      d.setTime(d.getTime() + 365*24*60*60*1000);
+      document.cookie = cookieName + '=1; expires=' + d.toUTCString() + '; path=/';
+      banner.style.display = 'none';
     });
-    scrollBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+  })();
+</script>
 
-    (function () {
-      const banner = document.getElementById('cookieBanner');
-      const button = document.getElementById('cookieAccept');
-      const cookieName = 'cookieConsent';
-      const hasConsent = document.cookie.split(';')
-        .some(c => c.trim().startsWith(cookieName + '=1'));
-      if (!hasConsent) banner.style.display = 'flex';
-      button.addEventListener('click', () => {
-        const d = new Date();
-        d.setTime(d.getTime() + 365*24*60*60*1000);
-        document.cookie = cookieName + '=1; expires=' + d.toUTCString() + '; path=/';
-        banner.style.display = 'none';
-      });
-    })();
-  </script>
 </body>
 </html>
