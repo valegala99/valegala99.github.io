@@ -88,18 +88,11 @@
       font-weight: 600;
     }
 
-    nav a {
-      color: #1b00ff;
-    }
-
+    nav a { color: #1b00ff; }
     nav a:hover,
-    nav .active {
-      color: #fffb00;
-    }
+    nav .active { color: #fffb00; }
 
-    main {
-      padding-top: 1.5rem;
-    }
+    main { padding-top: 1.5rem; }
 
     .grid {
       display: grid;
@@ -201,6 +194,32 @@
       display: flex;
     }
 
+    /* Cookie banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.75rem 1rem;
+      background: rgba(0,0,0,0.95);
+      color: #fff;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      z-index: 50;
+    }
+    .cookie-banner button {
+      border-radius: 999px;
+      border: 1px solid #fff;
+      background: #fff;
+      color: #000;
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
     @media (max-width: 768px) {
       .header-inner {
         flex-direction: column;
@@ -217,6 +236,11 @@
 
       footer .footer-inner {
         grid-template-columns: minmax(0, 1fr);
+      }
+
+      .cookie-banner {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -246,7 +270,7 @@
       <section class="grid" aria-labelledby="encoded-invitation-title">
         <div>
           <div class="album-cover">
-            <!-- TIP for speed: replace this PNG with a compressed JPG/WebP of ~1200px side -->
+            <!-- For extra speed, replace PNG with a compressed JPG/WebP file and update src -->
             <img
               src="data/files/copertinafrontefinale3000_3000.png"
               alt="Copertina dell'album encoded invitation"
@@ -320,6 +344,15 @@
 
   <button id="scrollToTop" aria-label="Torna all'inizio">↑</button>
 
+  <!-- Cookie banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <span>
+      Questo sito web può utilizzare cookie tecnici necessari al funzionamento.
+      <a href="privacy-policy.html">Ulteriori informazioni</a>
+    </span>
+    <button type="button" id="cookieAccept">Accetto</button>
+  </div>
+
   <script>
     // Scroll to top button (no jQuery)
     const scrollBtn = document.getElementById('scrollToTop');
@@ -333,6 +366,27 @@
     scrollBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // Simple cookie consent
+    (function () {
+      const banner = document.getElementById('cookieBanner');
+      const button = document.getElementById('cookieAccept');
+      if (!banner || !button) return;
+
+      const cookieName = 'cookieConsent';
+      const hasConsent = document.cookie.split(';').some(c => c.trim().startsWith(cookieName + '=1'));
+
+      if (!hasConsent) {
+        banner.style.display = 'flex';
+      }
+
+      button.addEventListener('click', function () {
+        const d = new Date();
+        d.setTime(d.getTime() + 365*24*60*60*1000);
+        document.cookie = cookieName + '=1; expires=' + d.toUTCString() + '; path=/';
+        banner.style.display = 'none';
+      });
+    })();
   </script>
 </body>
 </html>
